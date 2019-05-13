@@ -28,20 +28,29 @@ def print_footer(names)
 end
 
 def input_students
-  puts "Please enter the name of the students"
+  puts "Please enter the name & cohort of the students"
   puts "To finish, just hit return twice"
   students = []
+  puts "Please enter name"
   name = gets.chomp
+  puts "Please enter cohort"
+  cohort = gets.chomp
+  puts "Hobby?"
+  hobby = gets.chomp
 
   while !name.empty? do
-    students << {name: name, cohort: :november}
+    cohort_symbol = (cohort == "" ? "Not assigned to cohort" : cohort).to_sym
+    students << {name: name, cohort: cohort_symbol, hobby: hobby}
     puts "Now we have #{students.count} students"
+    puts "Please enter name"
     name = gets.chomp
+    puts "Please enter cohort"
+    cohort = gets.chomp
   end
   students
 end
 
-# students = input_students
+students = input_students
 print_header
 print(students)
 print_footer(students)
