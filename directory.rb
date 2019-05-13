@@ -1,15 +1,15 @@
 students = [
-  {name: "Dr. Hannibal Lecter", cohort: :november},
-  {name: "Darth Vader", cohort: :november},
-  {name: "Nurse Ratched", cohort: :november},
-  {name: "Michael Corleone", cohort: :november},
-  {name: "Alex DeLarge", cohort: :november},
-  {name: "The Wicked Witch of the West", cohort: :november},
-  {name: "Terminator", cohort: :november},
-  {name: "Freddy Krueger", cohort: :november},
-  {name: "The Joker", cohort: :november},
-  {name: "Joffrey Baratheon", cohort: :november},
-  {name: "Norman Bates", cohort: :november}
+  {name: "Dr. Hannibal Lecter", cohort: :november, hobby: "tennis"},
+  {name: "Darth Vader", cohort: :november, hobby: "rockclimbing"},
+  {name: "Nurse Ratched", cohort: :november, hobby: "tennis"},
+  {name: "Michael Corleone", cohort: :november, hobby: "cricket"},
+  {name: "Alex DeLarge", cohort: :november, hobby: "coding"},
+  {name: "The Wicked Witch of the West", cohort: :november, hobby: "cricket"},
+  {name: "Terminator", cohort: :november, hobby: "football"},
+  {name: "Freddy Krueger", cohort: :november, hobby: "football"},
+  {name: "The Joker", cohort: :november, hobby: "rockclimbing"},
+  {name: "Joffrey Baratheon", cohort: :november, hobby: "tennis"},
+  {name: "Norman Bates", cohort: :november, hobby: "coding"}
 ]
 
 def print_header
@@ -19,7 +19,7 @@ end
 
 def print(names)
   names.each_with_index do |name, index|
-    puts "#{index + 1}. #{name[:name]} (#{name[:cohort]} cohort)"
+    puts "#{index + 1}. #{name[:name]} (#{name[:cohort]} cohort) Favourite hobby is #{name[:hobby]}"
   end
 end
 
@@ -41,7 +41,7 @@ def input_students
   students
 end
 
-students = input_students
+# students = input_students
 print_header
 print(students)
 print_footer(students)
